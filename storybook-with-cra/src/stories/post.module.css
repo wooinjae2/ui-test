@@ -1,0 +1,52 @@
+.post {
+  border: 5px solid #f8bbd0;
+  margin: 50px;
+  padding: 80px;
+}
+
+.postTitle > h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+.postBody {
+  padding-top: 30px;
+  line-height: 2;
+  padding-bottom: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.reference {
+  padding-top: 30px;
+}
+
+.reference h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+.reference div {
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .post {
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px;
+    font: 0.9em;
+  }
+}
