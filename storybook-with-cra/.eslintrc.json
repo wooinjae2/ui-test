@@ -1,7 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
+    "es5": true,
     "node": true
   },
   "parser": "babel-eslint",
@@ -36,11 +36,11 @@
     "import/no-unresolved" : 0,
     "react/jsx-props-no-spreading": 0,
     "react/destructuring-assignment": 0,
-    "jsx-a11y/click-events-have-key-events": 1,
+    "jsx-a11y/click-events-have-key-events": 0, //
     "import/prefer-default-export" : 0,
     "import/no-extraneous-dependencies": ["error", {"peerDependencies": true}],
-    "jsx-a11y/label-has-associated-control": 0, // 
-    "jsx-a11y/click-events-have-key-events": 0 //웹 접근성, 클릭이벤트를 할수없는경우 키보드 이벤트가 필요하다.
+    "jsx-a11y/label-has-associated-control": 0 
+    
 
   }
 }
