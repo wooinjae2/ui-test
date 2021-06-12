@@ -4,7 +4,7 @@ import { Post } from './Post';
 
 
 export default {
-  title: 'Example/Post',
+  title: 'Component/Post',
   component: Post,
 };
 
