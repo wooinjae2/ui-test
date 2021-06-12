@@ -1,9 +1,7 @@
-import styles from './post.module.css';
 import PropTypes from 'prop-types';
+import styles from './post.module.css';
 
 export const Post = (props) => {
-
-  
   return (
     <div className={styles.post}>
       <div className={styles.postTitle}>
@@ -11,7 +9,7 @@ export const Post = (props) => {
       </div>
       <hr />
 
-      <div >{props.children}</div>
+      <div>{props.children}</div>
       {props.refList ? (
         <>
           <hr />
@@ -26,15 +24,13 @@ export const Post = (props) => {
       ) : null}
     </div>
   );
-}
-
+};
 
 Post.defaultProps = {
   title: '제목',
-  children:<p>컨텐츠</p>,
-  refList:[]
-
-}
+  children: <p>컨텐츠</p>,
+  refList: [],
+};
 
 Post.propTypes = {
   /**
@@ -53,4 +49,3 @@ Post.propTypes = {
    * Button contents
    */
 };
-
