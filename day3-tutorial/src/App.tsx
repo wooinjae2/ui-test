@@ -1,10 +1,9 @@
-import React from "react";
-import MainPage from "./MainPage";
+import ProfileListContainer from "./comp/ProfileListContainer";
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <ProfileListContainer />
     </div>
   );
 }
