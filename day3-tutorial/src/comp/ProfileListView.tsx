@@ -1,3 +1,4 @@
+import { observer } from "mobx-react";
 import React from "react";
 import Profile from "../model/Profile";
 
@@ -13,6 +14,7 @@ interface Props {
   onClickPass: (idx: number) => void;
 }
 
+@observer
 function ProfileListView(props: Props) {
   return (
     <div>

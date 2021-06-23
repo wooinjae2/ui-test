@@ -1,8 +1,17 @@
 import ProfileListView from "./ProfileListView";
 import Profile from "../model/Profile";
 import React, { useState } from "react";
+import { inject, observer } from "mobx-react";
+import ProfileStore from "../store/ProfileStore";
 
-function ProfileListContainer() {
+
+interface Props{
+   profileStore? : ProfileStore
+}
+
+@inject('profileStore')
+@observer
+function ProfileListContainer(props:Props) {
   const [profile, setProfile] = useState<Profile>({
     name: "",
     email: "",

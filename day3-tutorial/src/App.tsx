@@ -1,9 +1,13 @@
+import { Provider } from "mobx-react";
 import ProfileListContainer from "./comp/ProfileListContainer";
+import ProfileStore from "./store/ProfileStore";
 
 function App() {
   return (
     <div className="App">
-      <ProfileListContainer />
+      <Provider profileStore={new ProfileStore()}>
+        <ProfileListContainer />
+      </Provider>
     </div>
   );
 }
