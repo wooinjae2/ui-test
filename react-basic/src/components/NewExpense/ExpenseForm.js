@@ -8,6 +8,8 @@ const ExpenseForm = (props) => {
         enteredAmount: '',
         enteredDate:'', 
     })
+
+    const [showForm, setShowForm] = useState(false);
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
@@ -43,9 +45,14 @@ const ExpenseForm = (props) => {
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
+        setShowForm(false);
     }
 
-    return <form>
+    
+
+    let formContent = <div className="new-expense__actions"><button onClick={()=>{setShowForm(true)}}>Add New Expense</button></div>
+    if(showForm){
+        formContent = <form>
         <div className="new-expense__controls">
             <div className="new-expense__control">
                 <label>Title</label>
@@ -62,9 +69,13 @@ const ExpenseForm = (props) => {
             
         </div>
         <div className="new-expense__actions">
+            <button type="submit" onClick={()=>{setShowForm(false)}}>Cancel</button>
             <button type="submit" onClick={submitHandler}>Submit</button>
         </div>
     </form>
+    }
+
+    return <>{formContent}</>
 
 }
 
