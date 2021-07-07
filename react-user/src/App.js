@@ -8,7 +8,8 @@ function App() {
   const [userList, setUserList] = useState([]);
 
   const saveUserInfo =(userInfo) =>{
-    setUserList([userInfo, ...userList])
+    console.log('userInfo', {id:Math.random(), ...userInfo});
+    setUserList((prevUserList) => [{id:Math.random().toString(), ...userInfo}, ...prevUserList])
   }
   return (
     <div className="App">
