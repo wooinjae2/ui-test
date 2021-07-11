@@ -37,13 +37,16 @@ function App() {
   return (
       <AuthContext.Provider 
         value={{
-          isLoggedIn: isLoggedIn// provider에 default value를 넣어준다.
+          isLoggedIn: isLoggedIn,// provider에 default value를 넣어준다.
+          onLogout: logoutHandler
         }}
       >
         <MainHeader onLogout={logoutHandler} />
         <main>
           {!isLoggedIn && <Login onLogin={loginHandler} />}
-          {isLoggedIn && <Home onLogout={logoutHandler} />}
+          {isLoggedIn && <Home onLogout={logoutHandler} /> // 여기에 onLogout핸들러를 전달해서 사용하는것은 Reuseable을 깨뜨릴수 있기때문에 좋지 않다.
+          //context를 사용해야 하는 상황과 그렇지 않은 상황을 잘 판단해서 사용해야 한다.
+          }
         </main>
       </AuthContext.Provider>
 
