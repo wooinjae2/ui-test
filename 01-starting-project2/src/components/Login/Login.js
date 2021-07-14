@@ -39,6 +39,7 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
   const [emailState, dispatchEmail] = useReducer(emailReducer, {value: '', isValid: false}); 
   const [passwordState, dispatchPassword] = useReducer(passwordReducer, {value: '', isValid: false}); 
+  const [data, setData] = useState(false);
   //email validity, password validity를 따로 분리해서 관리할수있다.
   useEffect(()=>{
     console.log('USE EFFECT');
@@ -111,6 +112,11 @@ const Login = (props) => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
+  const aa = [];
+  for(let i = 0; i < 100000; i++){
+    aa.push('asdasdasdas');
+  }
+
   return (
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
@@ -122,6 +128,8 @@ const Login = (props) => {
           </Button>
         </div>
       </form>
+      <button onClick={()=>{setData((data)=>{setData(!data)})}}>asd</button>
+      {data&&aa.map((data)=><div>{data}</div>)}
     </Card>
   );
 };
