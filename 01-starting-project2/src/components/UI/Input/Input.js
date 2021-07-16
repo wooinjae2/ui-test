@@ -8,6 +8,10 @@ const Input = React.forwardRef((props, ref) => {
     inputRef.current.focus();
   };
 
+
+  //useImperativeHandle
+  //2번째 parameter는 function을 넘겨주고, 이 Ref를 가진 상우 컴포넌트에서 접근할수 있는 데이터를 전달한다. 
+  // 상위 객체에서는 ref를 통해 여기서 return한 객체들에 접근할 수 있다.
   useImperativeHandle(ref, () => {
     return {
       activate: activate,
