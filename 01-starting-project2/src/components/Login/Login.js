@@ -42,7 +42,7 @@ const Login = (props) => {
   const [data, setData] = useState(false);
   //email validity, password validity를 따로 분리해서 관리할수있다.
   useEffect(()=>{
-    console.log('USE EFFECT');
+    
   }, [])
 
   
@@ -59,7 +59,7 @@ const Login = (props) => {
 
 
   useEffect(()=>{
-    console.log('chceck validity');
+    
     // const identifier = setTimeout( () =>{
       setFormIsValid(
         emailIsValid && passwordIsValid)

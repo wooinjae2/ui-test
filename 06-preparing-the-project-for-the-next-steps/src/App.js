@@ -30,11 +30,6 @@ function App() {
 
         })
       }
-/*
-      title={movie.title}
-          releaseDate={movie.release}
-          openingText={movie.openingText}
-          */
       console.log('loadedMovies', loadedMovies);
       
       const transformedMovies = loadedMovies.map((movieData) => {
