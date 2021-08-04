@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Tasks from './components/Tasks/Tasks';
 import NewTask from './components/NewTask/NewTask';
@@ -10,7 +10,7 @@ function App() {
   
   
 
-  const transformTasks = (taskObj) => {
+  const transformTasks = useCallback((taskObj) => {
 
     const loadedTasks = [];
   
@@ -19,13 +19,13 @@ function App() {
     }
 
     setTasks(loadedTasks)
-  } 
+  },[] )
 
-  const httpData = useHttp({url:'https://react-http-test-7e183-default-rtdb.firebaseio.com/tasks.json'}, transformTasks);
+  const httpData = useHttp();
   const [isLoading, error, sendRequest] = httpData;
 
   useEffect(() => {
-    sendRequest();
+    sendRequest({url:'https://react-http-test-7e183-default-rtdb.firebaseio.com/tasks.json' },transformTasks);
   }, []);
 
   const taskAddHandler = (task) => {

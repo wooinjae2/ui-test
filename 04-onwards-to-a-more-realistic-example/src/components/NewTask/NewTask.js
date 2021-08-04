@@ -16,19 +16,19 @@ const NewTask = (props) => {
 
   }
 
-  const httpData = useHttp({
-    url: 'https://react-http-test-7e183-default-rtdb.firebaseio.com/tasks.json',
-    method: 'POST',
-    body: { text: taskText },
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  },createTaskFunction)
+  const httpData = useHttp();
 
   const enterTaskHandler = async (taskText) => {
     
     setTaskText(taskText);
-    sendRequest();
+    sendRequest({
+      url: 'https://react-http-test-7e183-default-rtdb.firebaseio.com/tasks.json',
+      method: 'POST',
+      body: { text: taskText },
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    },createTaskFunction);
   };
 
   const [isLoading, error, sendRequest] = httpData;
