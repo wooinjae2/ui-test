@@ -54,7 +54,8 @@ const AvailableMeals = () => {
 
     
     const fetchMeals = async () => {
-      const response = await fetch('http://react-http-test-7e183-default-rtdb.firebaseio.com/meals.json');
+      const response = await fetch('http://react-http-test-7e183-default-rtdb.firebaseio.com/meals');
+      console.log(response.ok);
       if(!response.ok){
         throw new Error('Something went wrong!');
       }
@@ -75,14 +76,12 @@ const AvailableMeals = () => {
       
     }
 
-    try{
-      fetchMeals();
-    } catch (error){
-      setIsLoading(false);
-      setHttpError(error.message)
-
-    }
     
+    fetchMeals().catch(error => {
+      console.log('error');
+      setIsLoading(false);
+      setHttpError(error.message)}
+    );
     
   }, [])
 
@@ -93,6 +92,14 @@ const AvailableMeals = () => {
       </section>
     )
   }
+
+  if(httpError){
+    return <section className={classes.MealsError}>
+      Error
+    </section>
+  }
+
+
 
   return (
     <section className={classes.meals}>
