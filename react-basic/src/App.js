@@ -18,10 +18,29 @@ function App() {
     setExpenses((prevState)=>{return [expense, ...prevState]});
   }
 
+  const preventDot = (event) =>
+{
+    alert(event.charCode)
+    //var test = document.getElementById("#age");
+    var key = event.charCode ? event.charCode : event.keyCode;  
+    
+    if (key === 46)
+    {
+        event.preventDefault();
+        return false;
+    }    
+}
+
+  const onChangeHandler = (e) => {
+
+    console.log('onChangeHandler');
+    console.log(e.target.value)
+  }
+
   return (
    <div>
-     <NewExpense addExpenseHandler={addExpenseHandler}/>
-     <Expenses expenses={expenses} />
+     <input type="number" onKeyDown={ (evt) => evt.key === '.' && evt.preventDefault() } />
+
    </div>
   );
 }
