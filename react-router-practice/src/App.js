@@ -14,6 +14,13 @@ const NotFound = React.lazy(()=> import('./pages/NotFound'));
 const AllQuotes = React.lazy(()=> import('./pages/AllQuotes'));
 //초기에 복잡한 로직, 규모가 큰 컴포넌트를 로딩하는 것은 초기 로딩속도를 느리게 만든다. 
 //이런 초기 로딩속도를 잡기 위해 Lazy Loading 사용
+//build transpile and optimization
+//Deploy 
+// Uploading Files
+// SPA HTML css javascript 
+// 빌드하면 많은 js가 만들어지고 이건 서버에서 실행된다.
+// npm run build
+// sudo npm install -g firebase-tools react Specific tool이 디플로이를 위해 파이어베이스가 만든 아니라 일반적인 소프트웨어 
 //const LoadingSpinner = React.lazy(()=> import('./components/UI/LoadingSpinner'));
 
 function App() {
