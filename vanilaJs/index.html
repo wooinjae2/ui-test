@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Vanila Test</title>
+    <link rel="stylesheet" type="text/css" href="./style.css"></style>
+  </head>
+  <body>
+      <script>
+          
+
+          document.addEventListener("DOMContentLoaded", function(){
+            const picEls = document.querySelectorAll('.pic');
+            console.log('picEls', picEls);
+
+            Array.prototype.map.call(picEls, (picEl)=>{
+                console.log('picEl', picEl);
+                picEl.addEventListener('click', function(e){
+                    
+                    console.log(this.innerText);
+                    const modalWrapper = document.querySelector('#modal_wrapper');
+                    modalWrapper.style.display = 'block';
+                    modalWrapper.
+                    modalWrapper.addEventListener('click', (e)=>{
+                        e.stopPropagation();
+                        console.log('cureentTarget', e.currentTarget ,this, this);
+                        if(e.currentTarget.id === 'modal_wrapper'){
+                            closeModal();
+                        }
+                        
+                    }, true)
+
+                    const modal = document.querySelector('#modal');
+                    modal.addEventListener('click', function(e){
+                        console.log('modal click');
+                    })
+                /*
+                    // 모달 on 
+                    body.style.overflow = 'hidden'; 
+                    // 모달 off 
+                    body.style.overflow = 'auto';
+                */
+
+
+                })
+            })
+          })
+
+          
+          
+
+          let colorChange = () => {
+              const dataTheme = document.documentElement.getAttribute('data-theme');
+              console.log(dataTheme);
+              if(dataTheme==='light'){
+                document.documentElement.setAttribute('data-theme', 'dark');
+              }else{
+                document.documentElement.setAttribute('data-theme', 'light');
+              }
+          }
+
+          let closeModal = () => {
+            const modal = document.querySelector('#modal_wrapper');
+            modal.style.display = 'none';
+          }
+
+          
+      </script>
+      <div class="control">
+          <button onclick="colorChange()" id="color_mode">dark</button>
+      </div>
+      <div class="pic_wrapper">
+        <div class="pic">a</div>
+        <div class="pic">b</div>
+        <div class="pic">c</div>
+        <div class="pic">d</div>
+        <div class="pic">e</div>
+        <div class="pic">f</div>
+      </div>
+
+      <div id="modal_wrapper">
+          <div id="modal">asdasd</div>
+      </div>
+  </body>
+</html>

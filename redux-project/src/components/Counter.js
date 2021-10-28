@@ -7,6 +7,7 @@ import { counterActions } from '../store/index';
 const Counter = () => {
   const dispatch = useDispatch();
   const {counter, showCounter} = useSelector(state => state.counter);
+  
   const toggleCounterHandler = () => {
     dispatch(counterActions.toggleCounter())
   };
@@ -19,7 +20,6 @@ const Counter = () => {
     dispatch(counterActions.increase(5));
   };
 
-
   const decrementHandler = () => {
     dispatch(counterActions.decrement());
   };
@@ -28,13 +28,9 @@ const Counter = () => {
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
       {showCounter &&<div className={classes.value}>{counter}</div>}
-      
-      
         <button onClick={incrementHandler}>Increment</button>
         <button onClick={increaseHandler}>Increase By 5</button>
         <button onClick={decrementHandler}>Decrement</button>
-      
-      
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
     </main>
   );
